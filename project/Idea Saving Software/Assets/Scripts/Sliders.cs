@@ -21,9 +21,12 @@ public class Sliders : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public void SliderUpdateIndeed () {
 		difficulty = (int)difficultySlider.value;
 		confidence = (int)confidenceSlider.value;
 		impact = (int)impactSlider.value;
+		transform.GetChild(0).GetChild(3).GetComponent<Text>().text = "DIFFICULTY: " + difficulty.ToString();
+		transform.GetChild(1).GetChild(3).GetComponent<Text>().text = "IMPACT: " + impact.ToString();
+		transform.GetChild(2).GetChild(3).GetComponent<Text>().text = "CONFIDENCE: " + confidence.ToString();
 	}
 }
